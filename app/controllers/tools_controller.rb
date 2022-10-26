@@ -2,10 +2,17 @@ class ToolsController < ApplicationController
   skip_before_action :authenticate_user!, only: :index
   def index
     @tools = Tool.all
+    @tools = policy_scope(Tool)
+  end
+
+  def show
+    @tool = Tool.find(params[:id])
+    authorize @tool
   end
 
   def new
     @tool = Tool.new
+    authorize @tool
   end
 
   def create
@@ -19,15 +26,20 @@ class ToolsController < ApplicationController
 
   def show
     @tool = Tool.find(params[:id])
+    @tool.user = current_user
+    authorize @tool
   end
 
   def edit
+    authorize @tool
   end
 
   def update
+    authorize @tool
   end
 
   def destroy
+    authorize @tool
   end
 
   private
