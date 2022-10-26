@@ -1,9 +1,7 @@
 class ToolsController < ApplicationController
   skip_before_action :authenticate_user!, only: :index
   def index
-  end
-
-  def show
+    @tools = Tool.all
   end
 
   def new
@@ -13,10 +11,14 @@ class ToolsController < ApplicationController
   def create
     @tool = Tool.new(tool_params)
     if @tool.save
-      redirect_to restaurant_path(@restaurant)
+      redirect_to tool_path
     else
       render :new, status: :unprocessable_entity
     end
+  end
+
+  def show
+    @tool = Tool.find(params[:id])
   end
 
   def edit
