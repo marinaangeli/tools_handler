@@ -5,11 +5,6 @@ class ToolsController < ApplicationController
     @tools = policy_scope(Tool)
   end
 
-  def show
-    @tool = Tool.find(params[:id])
-    authorize @tool
-  end
-
   def new
     @tool = Tool.new
     authorize @tool
@@ -17,6 +12,7 @@ class ToolsController < ApplicationController
 
   def create
     @tool = Tool.new(tool_params)
+    authorize @tool
     if @tool.save
       redirect_to tool_path
     else
