@@ -1,12 +1,8 @@
 class ToolsController < ApplicationController
   skip_before_action :authenticate_user!, only: :index
   def index
+    # @tools = Tool.all
     @tools = policy_scope(Tool)
-  end
-
-  def show
-    @tool = Tool.find(params[:id])
-    authorize @tool
   end
 
   def new
@@ -16,6 +12,16 @@ class ToolsController < ApplicationController
 
   def create
     @tool = Tool.new(tool_params)
+    authorize @tool
+    if @tool.save
+      redirect_to tool_path
+    else
+      render :new, status: :unprocessable_entity
+    end
+  end
+
+  def show
+    @tool = Tool.find(params[:id])
     @tool.user = current_user
     authorize @tool
   end
@@ -30,5 +36,11 @@ class ToolsController < ApplicationController
 
   def destroy
     authorize @tool
+  end
+
+  private
+
+  def tool_params
+    params.require(:tool).permit(:name, :price, :delivery)
   end
 end

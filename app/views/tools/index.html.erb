@@ -1,1 +1,5 @@
 <h1>INDEX TOOLS</h1>
+<% @tools.each do |tool| %>
+  <%= tool.id  %> - <%= tool.name %>
+  <%= link_to "More Info", tool_path(tool) %>
+<% end %>
