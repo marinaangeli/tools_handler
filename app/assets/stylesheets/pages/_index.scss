@@ -7,3 +7,24 @@
   grid-auto-rows: minmax(100px, auto);
   gap: 20px;
 }
+
+.card{
+  height: 30vh;
+}
+
+.card-img-top{
+  height: 70%;
+}
+
+.btn-yellow{
+  text-decoration: none;
+  background-color: #ffe35b;
+  color: black;
+  text-align: center;
+  font-size: smaller;
+  margin: 7px;
+  border-radius: 0.5rem;
+  padding: 2px;
+  padding-left: 8px;
+  padding-right: 8px;
+}
