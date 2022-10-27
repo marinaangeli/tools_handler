@@ -4,10 +4,11 @@
   </div>
 
 
-  <div class="">
+  <div class="tools-grid">
 
     <% @tools.each do |tool| %>
-      <div class="class">
+      <div class="card">
+        <img src="https://source.unsplash.com/random/300×150/?<%= tool.name.gsub(" ","-")%>)">
         <%= tool.id  %> - <%= tool.name %>
         <%= link_to "More Info", tool_path(tool) %>
       </div>
