@@ -11,7 +11,8 @@ class ToolsController < ApplicationController
   end
 
   def create
-    @tool = Tool.new(tool_params)
+    @tool = Tool.new(tool_params)@restaurant.user = current_user
+
     authorize @tool
     if @tool.save
       redirect_to tool_path
