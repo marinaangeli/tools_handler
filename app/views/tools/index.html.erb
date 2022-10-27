@@ -1,13 +1,29 @@
 <div class="container">
-  <div class="class">
-    <h1>INDEX TOOLS</h1>
+  <div class="d-flex">
+    <div>
+      <h1>INDEX TOOLS</h1>
+      <p>Tools index description here</p>
+    </div>
+    <div class="filter-form align-items-center">
+      <div class="d-flex">
+      <select class="form-select" aria-label="Default select example">
+        <option selected>State</option>
+      </select>
+      <select class="form-select" aria-label="Default select example">
+        <option selected>City</option>
+      </select>
+      <select class="form-select" aria-label="Default select example">
+        <option selected>Area</option>
+      </select>
+    </div>
+    </div>
   </div>
 
 
   <div class="tools-grid">
 
     <% @tools.each do |tool| %>
-      <div class="card shadow">
+      <div class="card">
         <img class="card-img-top cover" src="https://source.unsplash.com/random/300×150/?<%= tool.name.gsub(" ","-")%>)">
         <h6 class="card-title text-center fw-semibold p-1"><%= tool.name.capitalize %></h6>
         <div class="d-fex">
