@@ -3,6 +3,7 @@
     <%= simple_form_for @tool do |f| %>
       <%= f.input :name, label: "Enter new tools name:" %>
       <%= f.input :price %>
+      <%= f.input :photo, as: :file %>
       <%= f.submit %>
     <% end %>
   </div>
