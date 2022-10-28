@@ -15,7 +15,7 @@ class ToolsController < ApplicationController
     @tool.user = current_user
     authorize @tool
     if @tool.save
-      redirect_to tool_path
+      redirect_to tools_path
     else
       render :new, status: :unprocessable_entity
     end
@@ -42,6 +42,6 @@ class ToolsController < ApplicationController
   private
 
   def tool_params
-    params.require(:tool).permit(:name, :price)
+    params.require(:tool).permit(:name, :price, :user)
   end
 end
