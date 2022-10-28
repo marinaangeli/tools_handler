@@ -38,7 +38,6 @@ end
   Tool.create(
     name: Faker::House.furniture,
     price: rand(1..200),
-    availability: true,
     user_id: @users_id.sample
   )
 end
@@ -46,5 +45,5 @@ end
 @tools = Tool.all
 
 @tools.each do |tool|
-  puts "#{tool.name} - #{tool.price} - #{tool.availability} - #{tool.user_id}"
+  puts "#{tool.name} - #{tool.price} - #{tool.user_id}"
 end
