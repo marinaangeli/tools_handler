@@ -23,7 +23,7 @@ class ToolsController < ApplicationController
   end
 
   def show
-    @tool = Tool.find(params[:id])
+    set_tool
     authorize @tool
   end
 
@@ -40,6 +40,10 @@ class ToolsController < ApplicationController
   end
 
   private
+
+  def set_tool
+    @tool = Tool.find(params[:id])
+  end
 
   def tool_params
     params.require(:tool).permit(:name, :price, :user, :photo)
