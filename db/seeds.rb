@@ -34,6 +34,7 @@ end
 
 end
 
+@tools = ['hammer', 'shovel', 'driller', 'handsaw', 'filer', 'wrench', 'stepladder', 'toolbox','pickaxer', 'vice']
 10.times do
   Tool.create(
     name: Faker::House.furniture,
