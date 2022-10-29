@@ -51,6 +51,14 @@
   }
 }
 
+.btn-black {
+  text-decoration: none;
+  background-color: #000000;
+  color: #ffe35b;
+  background-color: #ffe35b;
+  color: black;
+ }
+
 .btn-orange-lg{
   text-decoration: none;
   background-color: #da9000;
@@ -64,7 +72,7 @@
   border: none;
 
   &:hover{
-  background-color: black;
-  color: #ffe35b;
+    background-color: black;
+    color: #ffe35b;
   }
 }
