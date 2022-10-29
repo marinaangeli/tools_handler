@@ -1,2 +1,30 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="container">
+  <div class="row row-cols-1 row-cols-md-3 g-4">
+    <div class="col">
+      <div class="card h-100 first-card">
+        <%= image_tag "picture.png", class: "card-img-top" %>
+        <div class="card-body">
+          <h5 class="card-title">Need a tool?</h5>
+        </div>
+      </div>
+    </div>
+
+    <div class="col">
+      <div class="card h-100 second-card">
+        <%= image_tag "hammer.png", class: "card-img-top" %>
+        <div class="card-body">
+          <h5 class="card-title">Tool Handler can help you</h5>
+        </div>
+      </div>
+    </div>
+
+    <div class="col">
+    <div class="card h-100 thrid-card">
+        <%= image_tag "friends.png", class: "card-img-3" %>
+        <div class="card-body">
+          <h5 class="card-title">Rent the tools you need, help someone else and even make some money!</h5>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
