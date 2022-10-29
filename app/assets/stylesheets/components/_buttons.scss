@@ -32,3 +32,20 @@
   border-color: #DA9000;
   }
 }
+
+.btn-yellow-lg{
+  text-decoration: none;
+  background-color: #ffe35b;
+  color: black;
+  text-align: center;
+  font-size: medium;
+  margin: 7px;
+  padding: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+
+  &:hover{
+  background-color: black;
+  color: #ffe35b;
+  }
+}

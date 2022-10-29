@@ -41,7 +41,7 @@ end
     rating: rand(1..5)
   )
 end
-
+rail s
 @tools = Tool.all
 
 @tools.each do |tool|

@@ -1,5 +1,5 @@
 <div class="container">
-  <div>
+  <div class="ms-4 mb-4 mt-2">
     <h1><%= @tool.name.capitalize %></h1>
   </div>
   <div class="row">
@@ -18,7 +18,7 @@
           <img class="img-fluid" src="https://source.unsplash.com/random/400×400/?<%= @tool.name.gsub(" ","-")%>)">
         <% end %>
     </div>
-    <div class="col-4 bg-dark text-white">
+    <div class="col-3 bg-dark text-white h-75 d-inline-block">
       <p>
         <% @tool.rating.times do %>
           <i class="fa-solid fa-star" style="color: #FEDE01;"></i>
@@ -27,11 +27,14 @@
           <i class="fa-regular fa-star" style="color: #FEDE01;"></i>
         <%end%>
       </p>
-      <div>
+      <div class="mb-3">
       <span>Offered by: <%= @tool.user.name %> </span>
       </div>
-      <div class="price fs-2">
+      <div class="price fs-2 mb-3">
         <%= number_to_currency(@tool.price) %>
+      </div>
+      <div class="mb-4">
+        <%= link_to "Rent now", tool_path(@tool), class:"btn-yellow-lg" %>
       </div>
     </div>
   </div>

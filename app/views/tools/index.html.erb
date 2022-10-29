@@ -32,7 +32,7 @@
         <h6 class="card-title text-center fw-semibold p-1"><%= tool.name.capitalize %></h6>
         <div class="d-fex">
           <span class="position-absolute bottom-0 start-0 m-1 ms-2 p-1"><%= number_to_currency(tool.price)%></span>
-          <%= link_to "Rent now", tool_path(tool), class:"btn-yellow position-absolute bottom-0 end-0" %>
+          <%= link_to "See Details", tool_path(tool), class:"btn-yellow position-absolute bottom-0 end-0" %>
         </div>
       </div>
     <% end %>
