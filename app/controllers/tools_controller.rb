@@ -28,15 +28,23 @@ class ToolsController < ApplicationController
   end
 
   def edit
+    set_tool
     authorize @tool
   end
 
   def update
+    set_tool
     authorize @tool
+    @tool.update(tool_params)
+    redirect_to tool_path(@tool)
   end
 
   def destroy
+    set_tool
     authorize @tool
+    @tool.destroy
+    # No need for app/views/tools/destroy.html.erb
+    redirect_to tools_path, status: :see_other
   end
 
   private
