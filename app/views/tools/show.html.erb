@@ -11,20 +11,26 @@
         <li><img class="show-carousel-img mb-1" src="https://source.unsplash.com/random/120×120/?<%= @tool.name.gsub(" ","-")%>)"></li>
       </ul>
     </div>
-    <div class="col-6">
+    <div class="col-6 d-flex justify-content-center">
       <% if @tool.photo.attached? %>
-          <img class="img-fluid" src="<%= cl_image_path @tool.photo.key, crop: :fill %>">
+          <img class="img-fluid show-img" src="<%= cl_image_path @tool.photo.key, crop: :pad %>">
         <% else %>
-          <img class="img-fluid" src="https://source.unsplash.com/random/400×400/?<%= @tool.name.gsub(" ","-")%>)">
+          <img class="img-fluid show-img" src="https://source.unsplash.com/random/400×400/?<%= @tool.name.gsub(" ","-")%>)">
         <% end %>
     </div>
-    <div class="col-3 bg-dark text-white h-75 d-inline-block">
+    <div class="col-3 bg-dark text-white h-75 d-inline-block pt-2">
       <p>
-        <% @tool.rating.times do %>
-          <i class="fa-solid fa-star" style="color: #FEDE01;"></i>
-        <%end%>
-        <% (5 - @tool.rating).times do %>
-          <i class="fa-regular fa-star" style="color: #FEDE01;"></i>
+        <% if @tool.rating.present? %>
+          <% @tool.rating.times do %>
+            <i class="fa-solid fa-star" style="color: #FEDE01;"></i>
+          <%end%>
+          <% (5 - @tool.rating).times do %>
+            <i class="fa-regular fa-star" style="color: #FEDE01;"></i>
+          <%end%>
+        <%else%>
+          <% 5.times do %>
+            <i class="fa-regular fa-star" style="color: #FEDE01;"></i>
+          <%end%>
         <%end%>
       </p>
       <div class="mb-3">
@@ -34,7 +40,17 @@
         <%= number_to_currency(@tool.price) %>
       </div>
       <div class="mb-4">
-        <%= link_to "Rent now", tool_path(@tool), class:"btn-yellow-lg" %>
+        <% if @tool.user == current_user %>
+          <div class = "d-flex justify-content-around">
+            <%= link_to "Edit tool", edit_tool_path(@tool), class:"btn-yellow-lg" %>
+            <%= link_to "Delete",
+              tool_path(@tool),
+              data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, :class => "btn-orange-lg"
+            %>
+          </div>
+        <% else %>
+        <%= link_to "Rent now", new_tool_rental_path(@tool), class:"btn-yellow-lg" %>
+        <% end %>
       </div>
     </div>
   </div>

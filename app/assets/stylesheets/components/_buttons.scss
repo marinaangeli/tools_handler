@@ -50,10 +50,19 @@
   color: #ffe35b;
   }
 }
+
 .btn-black {
   text-decoration: none;
   background-color: #000000;
   color: #ffe35b;
+  background-color: #ffe35b;
+  color: black;
+ }
+
+.btn-orange-lg{
+  text-decoration: none;
+  background-color: #da9000;
+  color: black;
   text-align: center;
   font-size: medium;
   margin: 7px;
@@ -63,7 +72,7 @@
   border: none;
 
   &:hover{
-  background-color: #ffe35b;
-    color: black;
+    background-color: black;
+    color: #ffe35b;
   }
 }

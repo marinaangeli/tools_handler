@@ -15,9 +15,9 @@
     <% @tools.each do |tool| %>
       <div class="card">
         <% if tool.photo.attached? %>
-          <img class="card-img-top cover" src="<%= cl_image_path tool.photo.key, height: 300, width: 400, crop: :fill %>">
+          <img class="card-img-top card-img-top-index cover" src="<%= cl_image_path tool.photo.key, height: 300, width: 400, crop: :pad %>">
         <% else %>
-          <img class="card-img-top cover" src="https://source.unsplash.com/random/300×150/?<%= tool.name.gsub(" ","-")%>)">
+          <img class="card-img-top card-img-top-index cover" src="https://source.unsplash.com/random/300×150/?<%= tool.name.gsub(" ","-")%>)">
         <% end %>
         <h6 class="card-title text-center fw-semibold p-1"><%= tool.name.capitalize %></h6>
         <div class="d-fex">

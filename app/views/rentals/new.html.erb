@@ -1,10 +1,12 @@
 <div class="container">
-<h1>New rental</h1>
-  <div  class="">
-    <%= simple_form_for [@tool, @rental] do |f| %>
-      <%= f.input :days %>
-      <%= f.input :delivery %>
-      <%= f.submit %>
-    <% end %>
+  <h1>Rent <%= @tool.name.capitalize %></h1>
+  <div class="d-flex justify-content-center">
+    <div  class="center-form shadow">
+      <%= simple_form_for [@tool, @rental] do |f| %>
+        <%= f.input :days, label: "Select the number of days to rent:" %>
+        <%= f.input :delivery, label: "Chose the delivery method:" %>
+        <%= f.submit "Rent", :class => "btn-yellow-lg" %>
+      <% end %>
+    </div>
   </div>
 </div>
