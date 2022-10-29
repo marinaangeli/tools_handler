@@ -38,7 +38,8 @@ end
   Tool.create(
     name: Faker::House.furniture,
     price: rand(1..200),
-    user_id: @users_id.sample
+    user_id: @users_id.sample,
+    rating: rand(1..5)
   )
 end
 

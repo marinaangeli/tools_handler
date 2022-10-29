@@ -23,7 +23,6 @@ class ToolsController < ApplicationController
 
   def show
     @tool = Tool.find(params[:id])
-    @tool.user = current_user
     authorize @tool
   end
 
