@@ -1,0 +1,10 @@
+<div class="container">
+<h1>New rental</h1>
+  <div  class="">
+    <%= simple_form_for [@tool, @rental] do |f| %>
+      <%= f.input :days %>
+      <%= f.input :delivery %>
+      <%= f.submit %>
+    <% end %>
+  </div>
+</div>
