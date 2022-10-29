@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_10_28_225720) do
+ActiveRecord::Schema[7.0].define(version: 2022_10_29_145905) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -25,7 +25,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_28_225720) do
   end
 
   create_table "active_storage_blobs", force: :cascade do |t|
-    t.string "kxxx'x'alse
+    t.string "key", null: false
     t.string "filename", null: false
     t.string "content_type"
     t.text "metadata"
@@ -71,9 +71,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_28_225720) do
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
     t.string "name"
-    t.string "state"
-    t.string "city"
-    t.string "area"
     t.string "address"
     t.string "phone"
     t.datetime "created_at", null: false
