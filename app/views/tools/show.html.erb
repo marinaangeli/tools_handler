@@ -1,5 +1,38 @@
-<h1>Tools Show Page</h1>
-<%= @tool.name %>
-<%= @tool.price %>
-<%= @tool.photo %>
-<%= (@tool.rating) %>
+<div class="container">
+  <div>
+    <h1><%= @tool.name.capitalize %></h1>
+  </div>
+  <div class="row">
+    <div class="col-2">
+      <ul style="list-style: none;">
+        <li><img class="show-carousel-img mb-1" src="https://source.unsplash.com/random/120×120/?<%= @tool.name.gsub(" ","-")%>)"></li>
+        <li><img class="show-carousel-img mb-1" src="https://source.unsplash.com/random/120×120/?<%= @tool.name.gsub(" ","-")%>)"></li>
+        <li><img class="show-carousel-img mb-1" src="https://source.unsplash.com/random/120×120/?<%= @tool.name.gsub(" ","-")%>)"></li>
+        <li><img class="show-carousel-img mb-1" src="https://source.unsplash.com/random/120×120/?<%= @tool.name.gsub(" ","-")%>)"></li>
+      </ul>
+    </div>
+    <div class="col-6">
+      <% if @tool.photo.attached? %>
+          <img class="img-fluid" src="<%= cl_image_path @tool.photo.key, crop: :fill %>">
+        <% else %>
+          <img class="img-fluid" src="https://source.unsplash.com/random/400×400/?<%= @tool.name.gsub(" ","-")%>)">
+        <% end %>
+    </div>
+    <div class="col-4 bg-dark text-white">
+      <p>
+        <% @tool.rating.times do %>
+          <i class="fa-solid fa-star" style="color: #FEDE01;"></i>
+        <%end%>
+        <% (5 - @tool.rating).times do %>
+          <i class="fa-regular fa-star" style="color: #FEDE01;"></i>
+        <%end%>
+      </p>
+      <div>
+      <span>Offered by: <%= @tool.user.name %> </span>
+      </div>
+      <div class="price fs-2">
+        <%= number_to_currency(@tool.price) %>
+      </div>
+    </div>
+  </div>
+</div>
