@@ -32,7 +32,7 @@ end
 
 end
 
-@tools = ['hammer', 'shovel', 'driller', 'handsaw', 'filer', 'wrench', 'stepladder', 'toolbox', 'pickaxer', 'vice']
+@tools = ['hammer', 'shovel', 'driller', 'handsaw', 'filer', 'wrench', 'stepladder', 'toolbox', 'plier', 'vice']
 10.times do
   Tool.create(
     name: @tools.pop,
@@ -41,7 +41,7 @@ end
     rating: rand(1..5)
   )
 end
-rail s
+
 @tools = Tool.all
 
 @tools.each do |tool|

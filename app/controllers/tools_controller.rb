@@ -15,6 +15,7 @@ class ToolsController < ApplicationController
     @tool.user = current_user
     authorize @tool
     if @tool.save
+
       redirect_to tools_path
     else
       render :new, status: :unprocessable_entity
