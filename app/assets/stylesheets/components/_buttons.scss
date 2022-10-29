@@ -50,3 +50,21 @@
   color: #ffe35b;
   }
 }
+
+.btn-orange-lg{
+  text-decoration: none;
+  background-color: #da9000;
+  color: black;
+  text-align: center;
+  font-size: medium;
+  margin: 7px;
+  padding: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border: none;
+
+  &:hover{
+  background-color: black;
+  color: #ffe35b;
+  }
+}
