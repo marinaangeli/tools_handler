@@ -50,3 +50,20 @@
   color: #ffe35b;
   }
 }
+.btn-black {
+  text-decoration: none;
+  background-color: #000000;
+  color: #ffe35b;
+  text-align: center;
+  font-size: medium;
+  margin: 7px;
+  padding: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border: none;
+
+  &:hover{
+  background-color: #ffe35b;
+    color: black;
+  }
+}
