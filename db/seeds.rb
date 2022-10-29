@@ -32,9 +32,10 @@ end
 
 end
 
+@tools = ['hammer', 'shovel', 'driller', 'handsaw', 'filer', 'wrench', 'stepladder', 'toolbox', 'pickaxer', 'vice']
 10.times do
   Tool.create(
-    name: Faker::House.furniture,
+    name: @tools.pop,
     price: rand(1..200),
     user_id: @users_id.sample,
     rating: rand(1..5)
