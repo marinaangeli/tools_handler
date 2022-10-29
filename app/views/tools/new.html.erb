@@ -1,9 +1,9 @@
 <div class="container">
-  <div  class="">
+  <div  class="center-form shadow">
     <%= simple_form_for @tool do |f| %>
-      <%= f.input :name, label: "Enter new tools name:" %>
+      <%= f.input :name, label: "Enter new tool's name:" %>
       <%= f.input :price %>
-      <%= f.input :photo, as: :file %>
+      <%= f.input :photo, as: :file , class:"mb-2" %>
       <%= f.submit %>
     <% end %>
   </div>
