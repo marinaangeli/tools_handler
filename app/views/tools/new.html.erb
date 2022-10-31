@@ -1,12 +1,14 @@
 <div class="container">
   <div class="d-flex justify-content-center">
     <div  class="center-form shadow">
+
       <%= simple_form_for @tool do |f| %>
         <%= f.input :name, label: "Enter new tool's name:" %>
         <%= f.input :price %>
         <%= f.input :photo, as: :file , class:"mb-2" %>
         <%= f.submit "Add new tool", :class => "btn-yellow-lg" %>
       <% end %>
+
     </div>
   </div>
 </div>
