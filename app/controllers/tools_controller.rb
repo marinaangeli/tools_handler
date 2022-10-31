@@ -21,7 +21,7 @@ class ToolsController < ApplicationController
     authorize @tool
     if @tool.save
 
-      redirect_to tools_path
+      redirect_to my_tools_path
     else
       render :new, status: :unprocessable_entity
     end
@@ -50,7 +50,7 @@ class ToolsController < ApplicationController
     authorize @tool
     @tool.destroy
     # No need for app/views/tools/destroy.html.erb
-    redirect_to tools_path, status: :see_other
+    redirect_to my_tools_path, status: :see_other
   end
 
   private
