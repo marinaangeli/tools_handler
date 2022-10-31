@@ -6,9 +6,8 @@ class ToolsController < ApplicationController
   end
 
   def my_tools
-    # @tools = Tool.all
-    # authorize current_user
-    # @tools = policy_scope(Tool)
+    @tools = Tool.where(user: current_user)
+    authorize @tools
   end
 
   def new

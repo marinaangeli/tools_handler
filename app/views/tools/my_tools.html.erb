@@ -1,1 +1,31 @@
-a
+<div class="container">
+  <div class="d-flex">
+    <div>
+      <h1>MY TOOLS</h1>
+      <p>Hello, <%= current_user.name %>! Here are the tools you put up for rent: </p>
+    </div>
+    <div class="filter-form align-items-center">
+      <%= link_to "Add New Tool", new_tool_path, class:"btn-yellow-lg" %>
+    </div>
+  </div>
+
+
+  <div class="tools-grid">
+
+    <% @tools.each do |tool| %>
+      <div class="card">
+        <% if tool.photo.attached? %>
+          <img class="card-img-top card-img-top-index cover" src="<%= cl_image_path tool.photo.key, height: 300, width: 400, crop: :pad %>">
+        <% else %>
+          <img class="card-img-top card-img-top-index cover" src="https://source.unsplash.com/random/300×150/?<%= tool.name.gsub(" ","-")%>)">
+        <% end %>
+        <h6 class="card-title text-center fw-semibold p-1"><%= tool.name.capitalize %></h6>
+        <div class="d-fex">
+          <span class="position-absolute bottom-0 start-0 m-1 ms-2 p-1"><%= number_to_currency(tool.price)%></span>
+          <%= link_to "See Details", tool_path(tool), class:"btn-yellow position-absolute bottom-0 end-0" %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+
+</div>

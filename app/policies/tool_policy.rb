@@ -6,12 +6,11 @@ class ToolPolicy < ApplicationPolicy
     end
   end
 
-  def my_tools?
-    # eu acho que deveria ser usado esse:
-     # scope.where(user: user) # If users can only see their restaurants
+  def show?
+    true
   end
 
-  def show?
+  def my_tools?
     true
   end
 

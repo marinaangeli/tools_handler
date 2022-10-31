@@ -1,0 +1,7 @@
+<h1>My Rentals</h1>
+
+    <% @rentals.each do |rental| %>
+      <% if rental.user == current_user %>
+        <%= rental.tool.name %>
+      <% end %>
+    <%end%>
