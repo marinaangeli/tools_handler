@@ -14,6 +14,10 @@ class RentalPolicy < ApplicationPolicy
     true
   end
 
+  def my_rentals?
+    true
+  end
+
   def create?
     true
   end

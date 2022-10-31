@@ -23,6 +23,11 @@ class RentalsController < ApplicationController
     authorize @rental
   end
 
+  def my_rentals
+    @rentals = Rental.where(user: current_user)
+    authorize @rentals
+  end
+
   private
 
 
