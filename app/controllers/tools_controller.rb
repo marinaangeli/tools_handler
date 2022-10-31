@@ -5,6 +5,12 @@ class ToolsController < ApplicationController
     @tools = policy_scope(Tool)
   end
 
+  def my_tools
+    # @tools = Tool.all
+    # authorize current_user
+    # @tools = policy_scope(Tool)
+  end
+
   def new
     @tool = Tool.new
     authorize @tool
@@ -26,6 +32,7 @@ class ToolsController < ApplicationController
     set_tool
     authorize @tool
   end
+
 
   def edit
     set_tool
