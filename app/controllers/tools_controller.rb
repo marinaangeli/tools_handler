@@ -3,6 +3,12 @@ class ToolsController < ApplicationController
   def index
     # @tools = Tool.all
     @tools = policy_scope(Tool)
+    @markers = @tools.geocoded.map do |tool|
+      {
+        lat: tool.latitude,
+        lng: tool.longitude
+      }
+    end
   end
 
   def my_tools
@@ -20,7 +26,6 @@ class ToolsController < ApplicationController
     @tool.user = current_user
     authorize @tool
     if @tool.save
-
       redirect_to my_tools_path
     else
       render :new, status: :unprocessable_entity
