@@ -1,7 +1,32 @@
-<h1>My Rentals</h1>
+<div class="container">
+  <h1>My Rentals</h1>
 
-    <% @rentals.each do |rental| %>
-      <% if rental.user == current_user %>
-        <%= rental.tool.name %>
-      <% end %>
-    <%end%>
+  <% @rentals.each do |rental| %>
+    <% if rental.user == current_user %>
+
+      <div class="card shadow mb-3" id="card-rentals">
+        <div class="row align-items-center no-gutters" id="card-rentals">
+          <div class="col-md-4" id="card-rentals">
+            <% if rental.tool.photo.attached? %>
+              <img class="img-fluid rounded-start" src="<%= cl_image_path rental.tool.photo.key, height: 300, width: 400, crop: :pad %>">
+            <% else %>
+              <img class="img-fluid rounded-start" src="https://source.unsplash.com/random/300×700/?<%= rental.tool.name.gsub(" ","-")%>)">
+            <% end %>
+          </div>
+          <div class="col-md-3">
+            <div class="card-body">
+              <h5 class="card-title py-2 fw-bold"><%= rental.tool.name.capitalize %></h5>
+              <span class="card-text">
+                You rented it for: <%= rental.days %> days <br>
+                Price per day: <%= number_to_currency(rental.tool.price) %> <br>
+                Final price: <%= number_to_currency((rental.tool.price * rental.days)) %>
+              </span>
+              <%# <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> %>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    <% end %>
+  <%end%>
+</div>

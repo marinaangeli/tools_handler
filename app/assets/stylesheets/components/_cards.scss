@@ -16,7 +16,7 @@
   }
 }
 
-.card{
+.card-index{
   height: 300px;
 
   .hover{
@@ -24,8 +24,17 @@
   }
 }
 
+#card-rentals{
+  max-height: 150px;
+  width: 70%;
+}
+
 .card-img-top-index{
   height: 70%;
+}
+
+.card-img-top-rentals{
+  max-height: 100%;
 }
 
 .price{
