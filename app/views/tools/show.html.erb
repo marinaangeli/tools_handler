@@ -49,9 +49,10 @@
             %>
           </div>
         <% else %>
-        <%= link_to "Rent now", new_tool_rental_path(@tool), class:"btn-yellow-lg" %>
+          <%= link_to "Rent now", new_tool_rental_path(@tool), class:"btn-yellow-lg" %>
         <% end %>
       </div>
+       <%= @tool.address %>
     </div>
   </div>
 </div>
