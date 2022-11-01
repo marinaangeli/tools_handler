@@ -9,7 +9,10 @@
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
 
     <link href="https://api.mapbox.com/mapbox-gl-js/v2.8.2/mapbox-gl.css" rel="stylesheet">
-    <the-script src="https://api.mapbox.com/mapbox-gl-js/v2.8.2/mapbox-gl.js"></the-script>
+    <%# <the-script src="https://api.mapbox.com/mapbox-gl-js/v2.8.2/mapbox-gl.js"></the-script> %>
+
+    <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.min.js"></script>
+    <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.css" type="text/css">
 
     <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
   </head>

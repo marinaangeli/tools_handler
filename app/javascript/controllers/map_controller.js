@@ -7,6 +7,7 @@ export default class extends Controller {
   }
 
   connect() {
+    console.log("conectou")
     mapboxgl.accessToken = this.apiKeyValue
     const map = new mapboxgl.Map({
     container: this.element, // container ID
