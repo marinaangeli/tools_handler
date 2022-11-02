@@ -54,6 +54,7 @@ gem "sassc-rails"
 # gem "image_processing", "~> 1.2"
 
 gem "cloudinary"
+gem "geocoder"
 
 gem "dotenv-rails", groups: [:development, :test]
 
