@@ -9,7 +9,7 @@ class ToolsController < ApplicationController
       {
         lat: tool.latitude,
         lng: tool.longitude,
-        info_window: render_to_string(partial: "info_window", locals: {tool: tool})
+        info_window: render_to_string(partial: "info_window", locals: { tool: tool })
       }
     end
   end
