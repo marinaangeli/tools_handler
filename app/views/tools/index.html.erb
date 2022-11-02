@@ -1,25 +1,23 @@
 <div class="container">
-  <div class="d-flex mt-3">
-    <div>
-      <h1>TOOLS FOR RENT LIST</h1>
-      <p>Tools for Rent Near You!</p>
-    </div>
-    <div class="filter-form align-items-center">
-      <%= link_to "Add New Tool", new_tool_path, class:"btn-yellow-lg" %>
-    </div>
-  </div>
 
   <div class="index-main-container mt-3">
+    <div>
+        <div>
+          <h1>TOOLS FOR RENT</h1>
+        <p style="margin-left:auto; margin-righ:auto;">Tools for Rent Near You!</p>
+        </div>
+        <div class="filter-form align-items-center">
+          <%= link_to "Add New Tool", new_tool_path, class:"btn-yellow-lg add-tool-index" %>
+        </div>
 
       <div data-controller="map"
         id='map'
         data-map-markers-value="<%= @markers.to_json %>"
-        data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"
-        style='width: 400px; height: 520px;'>
+        data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
       </div>
+    </div>
 
-
-    <div class="tools-grid ms-5">
+    <div class="tools-grid">
 
       <% @tools.each do |tool| %>
         <div class="card card-index">
