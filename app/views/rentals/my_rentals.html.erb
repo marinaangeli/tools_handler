@@ -1,7 +1,31 @@
-<h1>My Rentals</h1>
+<div class="container">
+  <div class="d-flex">
+    <div>
+      <h1>MY RENTALS</h1>
+      <p>Hello, <%= current_user.name %>! You are currently renting: </p>
+    </div>
+    <div class="filter-form align-items-center">
+      <%# <%= link_to "Add New Tool", new_tool_path, class:"btn-yellow-lg" %>
+    </div>
+  </div>
+
+
+  <div class="tools-grid">
 
     <% @rentals.each do |rental| %>
-      <% if rental.user == current_user %>
-        <%= rental.tool.name %>
-      <% end %>
-    <%end%>
+      <div class="card">
+        <% if rental.tool.photo.attached? %>
+          <img class="card-img-top card-img-top-index cover" src="<%= cl_image_path rental.tool.photo.key, height: 300, width: 400, crop: :pad %>">
+        <% else %>
+          <img class="card-img-top card-img-top-index cover" src="https://source.unsplash.com/random/300×150/?<%= rental.tool.name.gsub(" ","-")%>)">
+        <% end %>
+        <h6 class="card-title text-center fw-semibold p-1"><%= rental.tool.name.capitalize %></h6>
+        <div class="d-fex">
+          <span class="position-absolute bottom-0 start-0 m-1 ms-2 p-1"><%= number_to_currency(rental.tool.price)%></span>
+          <%= link_to "See Details", tool_path(rental.tool), class:"btn-yellow position-absolute bottom-0 end-0" %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+
+</div>
