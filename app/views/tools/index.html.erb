@@ -1,8 +1,8 @@
 <div class="container">
   <div class="d-flex mt-3">
     <div>
-      <h1>INDEX TOOLS</h1>
-      <p>Tools index description here</p>
+      <h1>TOOLS FOR RENT LIST</h1>
+      <p>Tools for Rent Near You!</p>
     </div>
     <div class="filter-form align-items-center">
       <%= link_to "Add New Tool", new_tool_path, class:"btn-yellow-lg" %>
@@ -29,7 +29,7 @@
           <% if tool.photo.attached? %>
             <img class="card-img-top card-img-top-index cover" src="<%= cl_image_path tool.photo.key, height: 300, width: 400, crop: :pad %>">
           <% else %>
-            <%# <img class="card-img-top card-img-top-index cover" src="https://source.unsplash.com/random/300×150/?<%= tool.name.gsub(" ","-")%>)"> %>
+            <img class="card-img-top card-img-top-index cover" src="https://source.unsplash.com/random/300×150/?<%= tool.name.gsub(" ","-")%>)">
           <% end %>
           <h6 class="card-title text-center fw-semibold p-1"><%= tool.name.capitalize %></h6>
           <div class="d-fex">
