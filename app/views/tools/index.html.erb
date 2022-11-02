@@ -9,9 +9,7 @@
     </div>
   </div>
 
-  <div class="row mt-3">
-
-    <div class="col-4">
+  <div class="index-main-container mt-3">
 
       <div data-controller="map"
         id='map'
@@ -19,13 +17,12 @@
         data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"
         style='width: 400px; height: 520px;'>
       </div>
-    </div>
 
 
-    <div class="tools-grid col-8">
+    <div class="tools-grid ms-5">
 
       <% @tools.each do |tool| %>
-        <div class="card">
+        <div class="card card-index">
           <% if tool.photo.attached? %>
             <img class="card-img-top card-img-top-index cover" src="<%= cl_image_path tool.photo.key, height: 300, width: 400, crop: :pad %>">
           <% else %>

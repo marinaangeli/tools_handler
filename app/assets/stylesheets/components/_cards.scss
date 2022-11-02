@@ -1,3 +1,4 @@
+//INDEX *************************
 .tools-grid{
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -5,15 +6,23 @@
 }
 
 @media(max-width: 992px) {
-  .cards {
+  .tools-grid {
     grid-template-columns: 1fr 1fr;
   }
 }
 
 @media(max-width: 768px) {
-  .cards {
+  .tools-grid {
     grid-template-columns: 1fr;
   }
+}
+
+.index-main-container{
+  display: 	flex;
+}
+
+#map{
+  height: 95vh;
 }
 
 .card-index{
@@ -24,6 +33,11 @@
   }
 }
 
+.card-img-top-index{
+  height: 70%;
+}
+
+//RENTALS***************************
 #card-rentals{
   max-height: 150px;
   width: 70%;
@@ -31,13 +45,99 @@
   margin-right: auto;
 }
 
-.card-img-top-index{
-  height: 70%;
-}
 
 .card-img-top-rentals{
   max-height: 100%;
 }
+
+
+.card-product {
+  overflow: hidden;
+  height: 25vh;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.card-product img {
+  height: 100%;
+  width: 250px;
+  object-fit: cover;
+}
+
+.card-product h2 {
+  font-size: 22px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card-product p {
+  font-size: 18px;
+  line-height: 1.4;
+  opacity: .7;
+  margin-bottom: 0;
+  margin-top: 8px;
+}
+
+@media(max-width: 768px) {
+  .card-product {
+    width: 100%;
+    height: 15vh;
+  }
+
+  .card-product img {
+    height: 100%;
+    width: 120px;
+    object-fit: cover;
+  }
+
+  .card-product h2 {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0;
+  }
+
+  .card-product p {
+    font-size: 12px;
+    line-height: 1.4;
+    opacity: .7;
+    margin-bottom: 0;
+    margin-top: 8px;
+  }
+}
+
+.card-product .card-product-infos {
+  padding: 16px;
+}
+
+//MY TOOLS **************************
+.tools-grid-my-tools{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 20px;
+}
+
+@media(max-width: 992px) {
+  .tools-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media(max-width: 768px) {
+  .tools-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+
+
+
+//SHARED
 
 .price{
   color: #FEDE01;
