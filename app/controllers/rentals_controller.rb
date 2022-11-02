@@ -28,10 +28,18 @@ class RentalsController < ApplicationController
     authorize @rentals
   end
 
-  private
+  def is_rented?
 
+    if
+
+  private
 
   def rental_params
     params.require(:rental).permit(:days, :delivery)
   end
+
+  def set_tool
+    @tool = Tool.find(params[:id])
+  end
+
 end
