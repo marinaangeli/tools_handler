@@ -1,33 +1,27 @@
-<div class="container">
-  <div class="row row-cols-1 row-cols-md-3 g-4">
-    <div class="col">
-      <div class="card h-100 first-card">
-        <%= image_tag "picture.png", class: "card-img-top" %>
-        <div class="card-body">
-          <h5 class="card-title-changed">Need a tool?</h5>
-        </div>
+<div class="banner">
+  <div class="container">
+    <div class="row justify-content-md-center">
+      <div class="col-md-auto mt-5 text">
+        <h1>Need a tool?</h1>
+        <p>Tool Handler can help you!</p>
       </div>
     </div>
-
-    <div class="col">
-      <div class="card h-100 second-card">
-        <%= image_tag "hammer.png", class: "card-img-top" %>
-        <div class="card-body">
-          <h5 class="card-title-changed">Tool Handler can help you</h5>
-        </div>
-      </div>
+    <div class="d-grid gap-2 col-2 mx-auto">
+      <button type="button" class="btn btn-orange-lg">Start Here</button>
     </div>
+  </div>
+</div>
 
-    <div class="col">
-    <div class="card h-100 thrid-card">
-        <%= image_tag "friends.png", class: "card-img-3" %>
-        <div class="card-body">
-          <h5 class="card-title-changed">Rent the tools you need, help someone else and even make some money!</h5>
-           <div class="mb-4 btn-home">
-             <%= link_to "Create Account", new_user_registration_path, class:"btn-black" %>
-           </div>
-        </div>
-      </div>
+<div class="cards mt-5">
+  <div class="row justify-content-md-center">
+    <div class="col col-lg-2 me-3 card-category">
+      Rent your tools
+    </div>
+    <div class="col col-lg-2 mx-3 card-category">
+      Make money
+    </div>
+    <div class="col col-lg-2 ms-3 card-category">
+      Solve problems
     </div>
   </div>
 </div>

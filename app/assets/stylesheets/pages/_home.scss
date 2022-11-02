@@ -1,35 +1,59 @@
-
-.h-100 {
-border-radius: 5px;
-margin-top: 100px;
-justify-content: space-around;
+.banner {
+  background-image: url(tools5.jpg);
+  background-size: cover;
+  background-position: center;
+  max-width: 100%;
+  height: 500px;
 }
 
-.first-card {
-  background: rgba(255, 163, 3, 0.5);
+.text > h1 {
+  font-size: 100px;
+  color: #FFA800;
+  font-weight: 200;
 }
 
-.second-card {
-  background: rgba(255, 163, 3, 0.75);
+.text > p {
+  font-size: 50px;
+  color: #FFA800;
+  font-weight: 200;
 }
 
-.thrid-card {
+.text {
+  background: rgba( 0, 0, 0, 0.3 );
+  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+  backdrop-filter: blur( 9.5px );
+  -webkit-backdrop-filter: blur( 9.5px );
+  border-radius: 10px;
+  border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+.home-card {
+  border-radius: 5px;
+  margin-top: 25px;
   background: #FFA800;
 }
-
-.card-title-changed {
+.text-change {
   font-family: "Nunito", "Helvetica", "sans-serif";
   font-style: normal;
   font-weight: 400;
-  font-size: 35px;
+  font-size: 25px;
   line-height: 39px;
-  color: #523600;
+  color: #75500a;
+  justify-content: center;
 }
 
-.card-image-3 {
-size: 15px;
+
+.btn-orange-lg {
+  margin-top: 100px;
 }
 
-.btn-black {
+.card-category {
+  height: 180px;
+  display: flex;
+  justify-content: center;
   align-items: center;
+  color: #FFA800;
+  background-color: rgb(13, 13, 15);
+  border-radius: 15px 30px;
+  font-size: 38px;
+  box-shadow: 5px 5px 6px #FFA800;
 }
