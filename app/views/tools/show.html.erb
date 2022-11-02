@@ -16,7 +16,7 @@
       </ul>
     </div>
     <div class="col-6 d-flex justify-content-center">
-      <% if @tool.photo.attached? %>
+      <% if @tool.photos.attached? %>
           <img class="img-fluid show-img" src="<%= cl_image_path @tool.photo.key, crop: :pad %>">
         <% else %>
           <img class="img-fluid show-img" src="https://source.unsplash.com/random/400×400/?<%= @tool.name.gsub(" ","-")%>)">
@@ -60,4 +60,3 @@
       </div>
     </div>
   </div>
-</div>
