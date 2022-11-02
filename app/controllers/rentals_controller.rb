@@ -1,13 +1,12 @@
 class RentalsController < ApplicationController
+  before_action :set_rented_tool, only: %i[new create]
 
   def new
-    @tool = Tool.find(params[:tool_id])
     @rental = Rental.new
     authorize @rental
   end
 
   def create
-    @tool = Tool.find(params[:tool_id])
     @rental = Rental.new(rental_params)
     @rental.user = current_user
     @rental.tool = @tool
@@ -28,18 +27,13 @@ class RentalsController < ApplicationController
     authorize @rentals
   end
 
-  def is_rented?
-
-    if
-
   private
 
   def rental_params
     params.require(:rental).permit(:days, :delivery)
   end
 
-  def set_tool
-    @tool = Tool.find(params[:id])
+  def set_rented_tool
+    @tool = Tool.find(params[:tool_id])
   end
-
 end
