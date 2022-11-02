@@ -1,10 +1,5 @@
 <div class="container">
-  <div class="d-flex">
-  </div>
-
-  <div class="row mt-5">
-
-    <div class="col-4">
+  <div class="d-flex mt-3">
     <div>
       <h1>INDEX TOOLS</h1>
       <p>Tools index description here</p>
@@ -12,11 +7,17 @@
     <div class="filter-form align-items-center">
       <%= link_to "Add New Tool", new_tool_path, class:"btn-yellow-lg" %>
     </div>
+  </div>
+
+  <div class="row mt-3">
+
+    <div class="col-4">
+
       <div data-controller="map"
         id='map'
         data-map-markers-value="<%= @markers.to_json %>"
         data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"
-        style='width: 400px; height: 300px;'>
+        style='width: 400px; height: 520px;'>
       </div>
     </div>
 
