@@ -1,31 +1,32 @@
 <div class="container">
-  <div class="d-flex">
-    <div>
-      <h1>MY RENTALS</h1>
-      <p>Hello, <%= current_user.name %>! You are currently renting: </p>
-    </div>
-    <div class="filter-form align-items-center">
-      <%# <%= link_to "Add New Tool", new_tool_path, class:"btn-yellow-lg" %>
-    </div>
-  </div>
+  <h1 class="mb-5">My Rentals</h1>
 
+  <% @rentals.each do |rental| %>
+    <% if rental.user == current_user %>
 
-  <div class="tools-grid">
-
-    <% @rentals.each do |rental| %>
-      <div class="card">
-        <% if rental.tool.photo.attached? %>
-          <img class="card-img-top card-img-top-index cover" src="<%= cl_image_path rental.tool.photo.key, height: 300, width: 400, crop: :pad %>">
-        <% else %>
-          <img class="card-img-top card-img-top-index cover" src="https://source.unsplash.com/random/300×150/?<%= rental.tool.name.gsub(" ","-")%>)">
-        <% end %>
-        <h6 class="card-title text-center fw-semibold p-1"><%= rental.tool.name.capitalize %></h6>
-        <div class="d-fex">
-          <span class="position-absolute bottom-0 start-0 m-1 ms-2 p-1"><%= number_to_currency(rental.tool.price)%></span>
-          <%= link_to "See Details", tool_path(rental.tool), class:"btn-yellow position-absolute bottom-0 end-0" %>
+      <div class="card shadow mb-3" id="card-rentals">
+        <div class="row no-gutters" style="max-height: 150px;">
+          <div class="col-md-4">
+            <% if rental.tool.photo.attached? %>
+              <img class="img-fluid rounded-start card-img-top-rentals" src="<%= cl_image_path rental.tool.photo.key, height: 300, width: 400, crop: :pad %>">
+            <% else %>
+              <img class="img-fluid rounded-start card-img-top-rentals" src="https://source.unsplash.com/random/300×700/?<%= rental.tool.name.gsub(" ","-")%>)">
+            <% end %>
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title py-2 fw-bold"><%= rental.tool.name.capitalize %></h5>
+              <span class="card-text">
+                You rented it for: <%= rental.days %> days <br>
+                Price per day: <%= number_to_currency(rental.tool.price) %> <br>
+                Final price: <%= number_to_currency((rental.tool.price * rental.days)) %>
+              </span>
+              <%# <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> %>
+            </div>
+          </div>
         </div>
       </div>
-    <% end %>
-  </div>
 
+    <% end %>
+  <%end%>
 </div>

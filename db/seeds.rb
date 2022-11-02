@@ -1,5 +1,5 @@
 puts "Cleaning database"
-
+Rental.destroy_all
 User.destroy_all
 Tool.destroy_all
 
@@ -18,6 +18,11 @@ puts "Generating users"
   )
 end
 
+User.create(
+  email: "teste@teste",
+  password: "aaaaaa"
+)
+
 @users = User.all
 
 @users.each do |user|
@@ -32,7 +37,7 @@ end
 
 end
 
-@tools = ['hammer', 'shovel', 'driller', 'handsaw', 'filer', 'wrench', 'stepladder', 'toolbox', 'plier', 'vice']
+@tools = ['hammer', 'shovel', 'driller', 'handsaw', 'filer', 'wrench', 'stepladder', 'toolbox', 'plier', 'screwdriver']
 10.times do
   Tool.create(
     name: @tools.pop,
