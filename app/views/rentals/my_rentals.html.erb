@@ -1,7 +1,26 @@
-<h1>My Rentals</h1>
+<div class="container">
+  <h1 class="my-5">My Rentals</h1>
 
-    <% @rentals.each do |rental| %>
-      <% if rental.user == current_user %>
-        <%= rental.tool.name %>
-      <% end %>
-    <%end%>
+  <% @rentals.each do |rental| %>
+    <% if rental.user == current_user %>
+
+      <div class="card-product mb-4">
+        <%# <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" /> %>
+        <% if rental.tool.photo.attached? %>
+            <img src="<%= cl_image_path rental.tool.photo.key, height: 300, width: 400, crop: :pad %>">
+        <% else %>
+          <img src="https://source.unsplash.com/random/300×700/?<%= rental.tool.name.gsub(" ","-")%>)">
+        <% end %>
+        <div class="card-product-infos ms-3">
+          <h2 class="mb-4"><%= rental.tool.name.capitalize %></h2>
+          <p>You rented it for: <strong><%= rental.days %></strong> days</p>
+          <p>Price per day: <strong><%= number_to_currency(rental.tool.price) %></strong></p>
+          <p>Final price: <strong><%= number_to_currency((rental.tool.price * rental.days)) %></strong></p>
+        </div>
+      </div>
+
+
+
+    <% end %>
+  <%end%>
+</div>

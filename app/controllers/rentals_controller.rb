@@ -1,19 +1,18 @@
 class RentalsController < ApplicationController
+  before_action :set_rented_tool, only: %i[new create]
 
   def new
-    @tool = Tool.find(params[:tool_id])
     @rental = Rental.new
     authorize @rental
   end
 
   def create
-    @tool = Tool.find(params[:tool_id])
     @rental = Rental.new(rental_params)
     @rental.user = current_user
     @rental.tool = @tool
     authorize @rental
     if @rental.save
-      redirect_to tool_path(@tool)
+      redirect_to my_rentals_path
     else
       render :new, status: :unprocessable_entity
     end
@@ -30,8 +29,11 @@ class RentalsController < ApplicationController
 
   private
 
-
   def rental_params
     params.require(:rental).permit(:days, :delivery)
+  end
+
+  def set_rented_tool
+    @tool = Tool.find(params[:tool_id])
   end
 end

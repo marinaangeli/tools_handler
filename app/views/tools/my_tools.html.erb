@@ -10,10 +10,10 @@
   </div>
 
 
-  <div class="tools-grid">
+  <div class="tools-grid-my-tools">
 
     <% @tools.each do |tool| %>
-      <div class="card">
+      <div class="card card-index">
         <% if tool.photo.attached? %>
           <img class="card-img-top card-img-top-index cover" src="<%= cl_image_path tool.photo.key, height: 300, width: 400, crop: :pad %>">
         <% else %>
