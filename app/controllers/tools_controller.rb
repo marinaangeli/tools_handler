@@ -1,5 +1,7 @@
 class ToolsController < ApplicationController
   skip_before_action :authenticate_user!, only: :index
+  before_action :set_tool, only: %i[show edit update destroy]
+
   def index
     # @tools = Tool.all
     @tools = policy_scope(Tool)
@@ -28,25 +30,20 @@ class ToolsController < ApplicationController
   end
 
   def show
-    set_tool
     authorize @tool
   end
 
-
   def edit
-    set_tool
     authorize @tool
   end
 
   def update
-    set_tool
     authorize @tool
     @tool.update(tool_params)
     redirect_to tool_path(@tool)
   end
 
   def destroy
-    set_tool
     authorize @tool
     @tool.destroy
     # No need for app/views/tools/destroy.html.erb

@@ -48,8 +48,10 @@
               data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, :class => "btn-orange-lg"
             %>
           </div>
+        <% elsif Rental.find_by(tool_id: @tool.id).present? %>
+          <h6 style="color: red">Currently Rented</h5>
         <% else %>
-        <%= link_to "Rent now", new_tool_rental_path(@tool), class:"btn-yellow-lg" %>
+          <%= link_to "Rent now", new_tool_rental_path(@tool), class:"btn-yellow-lg" %>
         <% end %>
       </div>
     </div>
