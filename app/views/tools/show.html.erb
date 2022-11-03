@@ -46,10 +46,10 @@
       <div class="mb-4">
         <% if @tool.user == current_user %>
           <div class = "d-flex justify-content-around">
-            <%= link_to "Edit tool", edit_tool_path(@tool), class:"btn-yellow-lg" %>
+            <%= link_to "Edit tool", edit_tool_path(@tool), class:"btn-orange-lg" %>
             <%= link_to "Delete",
               tool_path(@tool),
-              data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, :class => "btn-orange-lg"
+              data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, :class => "btn-yellow-lg"
             %>
           </div>
         <% elsif Rental.find_by(tool_id: @tool.id).present? %>
