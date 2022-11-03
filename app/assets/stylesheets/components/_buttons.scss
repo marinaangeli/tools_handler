@@ -51,13 +51,22 @@
   }
 }
 
-.btn-black {
-  text-decoration: none;
-  background-color: #000000;
-  color: #ffe35b;
-  background-color: #ffe35b;
-  color: black;
- }
+.btn-black{
+  font-size: 18px;
+  line-height: 1.7;
+  color: #ffaa00;
+  background-color: black;
+  border: 1px solid black;
+  width: 100%;
+  padding: 5px 10px;
+  border-radius: 4px;
+
+  &:hover{
+  background-color: whitesmoke;
+  color: #ffaa00;
+  border-color: #ffaa00;
+  }
+}
 
 .btn-orange-lg{
   text-decoration: none;
@@ -76,7 +85,6 @@
     color: #ffe35b;
   }
 }
-
 .my-rentals-btns{
   display:block;
   margin-left: auto;
