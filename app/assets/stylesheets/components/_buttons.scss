@@ -68,6 +68,22 @@
   }
 }
 
+.btn-black-sm{
+  font-size: medium;
+  line-height: 1.7;
+  color: #ffaa00;
+  background-color: black;
+  border: 1px solid black;
+    padding: 5px;
+  border-radius: 3px;
+
+  &:hover{
+  background-color: gray;
+  color: #ffaa00;
+  border-color: #ffaa00;
+  }
+}
+
 .btn-orange-lg{
   text-decoration: none;
   background-color: #da9000;

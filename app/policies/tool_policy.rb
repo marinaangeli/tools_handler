@@ -10,6 +10,10 @@ class ToolPolicy < ApplicationPolicy
     true
   end
 
+  def search_by_name_and_address?
+    true
+  end
+
   def my_tools?
     true
   end
