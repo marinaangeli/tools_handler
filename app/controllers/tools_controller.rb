@@ -3,8 +3,11 @@ class ToolsController < ApplicationController
   before_action :set_tool, only: %i[show edit update destroy]
 
   def index
-    # @tools = Tool.all
-    @tools = policy_scope(Tool)
+    if params[:query].present?
+      @tools = Tool.search_by_name_and_address
+    else
+      @tools = policy_scope(Tool)
+    end
     @markers = @tools.geocoded.map do |tool|
       {
         lat: tool.latitude,
