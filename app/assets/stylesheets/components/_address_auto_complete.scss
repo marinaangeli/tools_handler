@@ -1,7 +1,7 @@
-.mapboxgl-ctrl-geocoder--input{
-  max-width: none;
-  width: 100%;
-  border: 1px solid lightgrey;
-  box-shadow: none;
-  background-color: transparent;
+.mapboxgl-ctrl-geocoder {
+  max-width: none !important;
+  width: 100% !important;
+  border: 1px solid lightgrey !important;
+  box-shadow: none !important;
+  background-color: #F4F4F4 !important;
 }
