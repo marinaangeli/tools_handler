@@ -9,15 +9,22 @@
 
     <div class="col-2">
       <ul style="list-style: none;">
+        <% @tool.photos.each_with_index do |photo, index| %>
+          <li class="mb-2 shadow"><%= cl_image_tag photo.key, height: 120, width: 120, crop: :pad %></li>
+        <% end %>
+
+        <!--
         <li><img class="show-carousel-img mb-1" src="https://source.unsplash.com/random/120×120/?<%= @tool.name.gsub(" ","-")%>)"></li>
         <li><img class="show-carousel-img mb-1" src="https://source.unsplash.com/random/120×120/?<%= @tool.name.gsub(" ","-")%>)"></li>
         <li><img class="show-carousel-img mb-1" src="https://source.unsplash.com/random/120×120/?<%= @tool.name.gsub(" ","-")%>)"></li>
         <li><img class="show-carousel-img mb-1" src="https://source.unsplash.com/random/120×120/?<%= @tool.name.gsub(" ","-")%>)"></li>
+        -->
+
       </ul>
     </div>
     <div class="col-6 d-flex justify-content-center">
-      <% if @tool.photo.attached? %>
-          <img class="img-fluid show-img" src="<%= cl_image_path @tool.photo.key, crop: :pad %>">
+      <% if @tool.photos.attached? %>
+          <img class="img-fluid show-img" src="<%= cl_image_path @tool.photos[0].key, crop: :pad %>">
         <% else %>
           <img class="img-fluid show-img" src="https://source.unsplash.com/random/400×400/?<%= @tool.name.gsub(" ","-")%>)">
         <% end %>
@@ -60,4 +67,3 @@
       </div>
     </div>
   </div>
-</div>
