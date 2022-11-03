@@ -1,24 +1,27 @@
 <div class="container">
-
   <div class="index-main-container mt-3">
     <div>
-        <div>
-          <h1>TOOLS FOR RENT</h1>
+      <div>
+        <%= form_with url: tools_path, method: :get, class: "d-flex mt-1 mb-3" do %>
+          <%= text_field_tag :query,
+              params[:query],
+              class: "form-control",
+              placeholder: "Find a tool" %>
+                <%= submit_tag "Search", class: "btn btn-black-sm" %>
+        <% end %>
+        <h1>TOOLS FOR RENT</h1>
         <p style="margin-left:auto; margin-righ:auto;">Tools for Rent Near You!</p>
-        </div>
-        <div class="filter-form align-items-center">
-          <%= link_to "Add New Tool", new_tool_path, class:"btn-yellow-lg add-tool-index" %>
-        </div>
-
+      </div>
+      <div class="filter-form align-items-center">
+        <%= link_to "Add New Tool", new_tool_path, class:"btn-yellow-lg add-tool-index" %>
+      </div>
       <div data-controller="map"
         id='map'
         data-map-markers-value="<%= @markers.to_json %>"
         data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
       </div>
     </div>
-
     <div class="tools-grid">
-
       <% @tools.each do |tool| %>
         <div class="card card-index">
           <% if tool.photos.attached? %>
@@ -34,7 +37,5 @@
         </div>
       <% end %>
     </div>
-
   </div>
-
 </div>
