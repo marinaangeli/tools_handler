@@ -33,23 +33,6 @@
   }
 }
 
-.btn-yellow-lg{
-  text-decoration: none;
-  background-color: #ffe35b;
-  color: black;
-  text-align: center;
-  font-size: medium;
-  margin: 7px;
-  padding: 5px;
-  padding-left: 10px;
-  padding-right: 10px;
-  border: none;
-
-  &:hover{
-  background-color: black;
-  color: #ffe35b;
-  }
-}
 
 .home{
     font-size: 20px;
@@ -119,4 +102,22 @@
   align-self: center;
   margin-left: auto;
   margin-right: auto;
+}
+
+.btn-yellow-lg{
+  text-decoration: none;
+  background-color: #ffe35b;
+  color: black;
+  text-align: center;
+  font-size: medium;
+  margin: 7px;
+  padding: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border: none;
+
+  &:hover{
+    background-color: black;
+    color: #ffe35b;
+  }
 }
