@@ -4,7 +4,7 @@ class ToolsController < ApplicationController
 
   def index
     if params[:query].present?
-      @tools = Tool.search_by_name_and_address
+      @tools = policy_scope(Tool).search_by_name_and_address(params[:query])
     else
       @tools = policy_scope(Tool)
     end
