@@ -21,9 +21,6 @@
           <li class="nav-item">
             <%= link_to "My rentals", my_rentals_path, class: "nav-link" %>
           </li>
-          <li class="nav-item">
-            <%= link_to "Messages", "#", class: "nav-link" %>
-          </li>
           <li class="nav-item dropdown-center ">
             <a class="nav-link" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               <span class="navbar-toggler-icon"></span>
@@ -32,11 +29,6 @@
               <li><%= link_to "Edit my profile", edit_user_registration_path, class: "dropdown-item" %></li>
               <li><%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %></li>
             </ul>
-            <%# <%= a class: "avatar dropdown-toggle ", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-            <%# <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown"> %>
-              <%# <%= link_to "Edit my profile", edit_user_registration_path, class: "dropdown-item" %>
-              <%# <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
-            <%# </div> %>
           </li>
         <% else %>
           <li class="nav-item">
