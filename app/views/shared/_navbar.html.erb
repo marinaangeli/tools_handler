@@ -23,7 +23,7 @@
           </li>
           <li class="nav-item dropdown">
           <% if current_user.avatar.attached? %>
-            <%= cl_image_tag current_user.avatar.key, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+            <%= cl_image_tag current_user.avatar.key, transformation: [{gravity: "face", height: 400, width: 400, crop: "thumb"}], class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
             <% else %>
              <a class="nav-link" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <i class="fa-regular fa-user"></i>
