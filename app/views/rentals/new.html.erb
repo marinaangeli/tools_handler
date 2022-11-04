@@ -4,7 +4,7 @@
     <div  class="center-form shadow">
       <%= simple_form_for [@tool, @rental] do |f| %>
         <%= f.input :days, label: "Select the number of days to rent:" %>
-        <%= f.input :delivery, label: "Chose the delivery method:" %>
+        <%= f.input :delivery, collection: [ "Pickup", "Delivery"], label: "Chose delivery method:" %>
         <%= f.submit "Rent", :class => "btn-yellow-lg" %>
       <% end %>
     </div>

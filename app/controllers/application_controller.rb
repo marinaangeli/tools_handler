@@ -30,6 +30,10 @@ class ApplicationController < ActionController::Base
     tools_url(user)
   end
 
+  def user_root_path
+    tools_url(@user)
+  end
+
   private
 
   def skip_pundit?
