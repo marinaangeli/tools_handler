@@ -33,22 +33,14 @@
   }
 }
 
-.btn-yellow-lg{
-  text-decoration: none;
-  background-color: #ffe35b;
-  color: black;
-  text-align: center;
-  font-size: medium;
-  margin: 7px;
-  padding: 5px;
-  padding-left: 10px;
-  padding-right: 10px;
-  border: none;
 
-  &:hover{
-  background-color: black;
-  color: #ffe35b;
-  }
+.home{
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 10px;
+    padding: 10px 20px 10px 20px;
+    background-color: #FFB414;
+    margin-left:45px;
 }
 
 .btn-black{
@@ -63,6 +55,22 @@
 
   &:hover{
   background-color: whitesmoke;
+  color: #ffaa00;
+  border-color: #ffaa00;
+  }
+}
+
+.btn-black-sm{
+  font-size: medium;
+  line-height: 1.7;
+  color: #ffaa00;
+  background-color: black;
+  border: 1px solid black;
+    padding: 5px;
+  border-radius: 3px;
+
+  &:hover{
+  background-color: gray;
   color: #ffaa00;
   border-color: #ffaa00;
   }
@@ -94,4 +102,22 @@
   align-self: center;
   margin-left: auto;
   margin-right: auto;
+}
+
+.btn-yellow-lg{
+  text-decoration: none;
+  background-color: #ffe35b;
+  color: black;
+  text-align: center;
+  font-size: medium;
+  margin: 7px;
+  padding: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border: none;
+
+  &:hover{
+    background-color: black;
+    color: #ffe35b;
+  }
 }

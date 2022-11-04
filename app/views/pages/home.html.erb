@@ -1,27 +1,23 @@
-<div class="banner">
-  <div class="container">
-    <div class="row justify-content-md-center">
-      <div class="col-md-auto mt-5 text">
-        <h1>Need a tool?</h1>
-        <p>Tool Handler can help you!</p>
-      </div>
-    </div>
-    <div class="d-grid gap-2 col-2 mx-auto">
-      <%= link_to "Start Here", new_user_registration_path, class: "btn btn-orange-lg" %>
-    </div>
-  </div>
-</div>
+<div class="container">
 
-<div class="cards mt-5">
-  <div class="row justify-content-md-center">
-    <div class="col col-lg-2 me-3 card-category">
-      Rent your tools
+  <div class="d-flex justify-content-around mt-4">
+
+    <div>
+      <%= cl_image_tag("card1_jyw4i8", width: 300, height: 600, crop: :fit) %>
+      <h2 class="landing-text text-1">Need a tool?</h2>
     </div>
-    <div class="col col-lg-2 mx-3 card-category">
-      Make money
+
+    <div>
+      <%= cl_image_tag("card2_obcwrq", width: 250, height: 400, crop: :scale) %>
+      <h2 class="landing-text text-2">Tool Handler can help you!</h2>
+      <%= link_to "START NOW!", tools_path, class:"btn-yellow-lg home shadow" %>
     </div>
-    <div class="col col-lg-2 ms-3 card-category">
-      Solve problems
+
+    <div class="ps-5">
+      <%= cl_image_tag("card3_mljm6z", width: 300, height: 600, crop: :fit) %>
+      <h2 class="landing-text text-3">Rent the tool you need in here!</h2>
     </div>
+
   </div>
+
 </div>

@@ -55,6 +55,7 @@ gem "sassc-rails"
 
 gem "cloudinary"
 gem "geocoder"
+gem "pg_search"
 
 gem "dotenv-rails", groups: [:development, :test]
 
