@@ -5,16 +5,13 @@
     <% if rental.user == current_user %>
 
       <div class="card-product mb-4">
-        <%# <% <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" /> %> %>
-<%
-=begin%>
-        <% if rental.tool.photo.attached? %>
-            <img src="<%= cl_image_path rental.tool.photo.key, height: 300, width: 400, crop: :pad %>">
+
+        <% if rental.tool.photos.attached? %>
+            <img src="<%= cl_image_path rental.tool.photos[0].key, height: 300, width: 400, crop: :pad %>">
         <% else %>
           <img src="https://source.unsplash.com/random/300×700/?<%= rental.tool.name.gsub(" ","-")%>)">
         <% end %>
-<%
-=end%>
+
         <div class="card-product-infos ms-3">
           <h2 class="mb-4"><%= rental.tool.name.capitalize %></h2>
           <p>You rented it for: <strong><%= rental.days %></strong> days</p>

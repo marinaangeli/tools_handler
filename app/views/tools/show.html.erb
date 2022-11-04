@@ -9,16 +9,19 @@
 
     <div class="col-2">
       <ul style="list-style: none;">
-        <% @tool.photos.each_with_index do |photo, index| %>
-          <li class="mb-2 shadow"><%= cl_image_tag photo.key, height: 120, width: 120, crop: :pad %></li>
-        <% end %>
 
-        <!--
-        <li><img class="show-carousel-img mb-1" src="https://source.unsplash.com/random/120×120/?<%= @tool.name.gsub(" ","-")%>)"></li>
-        <li><img class="show-carousel-img mb-1" src="https://source.unsplash.com/random/120×120/?<%= @tool.name.gsub(" ","-")%>)"></li>
-        <li><img class="show-carousel-img mb-1" src="https://source.unsplash.com/random/120×120/?<%= @tool.name.gsub(" ","-")%>)"></li>
-        <li><img class="show-carousel-img mb-1" src="https://source.unsplash.com/random/120×120/?<%= @tool.name.gsub(" ","-")%>)"></li>
-        -->
+        <% if @tool.photos.attached? %>
+
+          <% @tool.photos.each_with_index do |photo, index| %>
+            <li class="mb-2 shadow"><%= cl_image_tag photo.key, height: 120, width: 120, crop: :pad %></li>
+          <% end %>
+          
+        <% else %>
+          <li><img class="show-carousel-img mb-1" src="https://source.unsplash.com/random/120×120/?<%= @tool.name.gsub(" ","-")%>)"></li>
+          <li><img class="show-carousel-img mb-1" src="https://source.unsplash.com/random/120×120/?<%= @tool.name.gsub(" ","-")%>)"></li>
+          <li><img class="show-carousel-img mb-1" src="https://source.unsplash.com/random/120×120/?<%= @tool.name.gsub(" ","-")%>)"></li>
+          <li><img class="show-carousel-img mb-1" src="https://source.unsplash.com/random/120×120/?<%= @tool.name.gsub(" ","-")%>)"></li>
+        <% end %>
 
       </ul>
     </div>
