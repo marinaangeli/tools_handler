@@ -29,7 +29,13 @@
           <% else %>
             <img class="card-img-top card-img-top-index cover" src="https://source.unsplash.com/random/300×150/?<%= tool.name.gsub(" ","-")%>)">
           <% end %>
-          <h6 class="card-title text-center fw-semibold p-1"><%= tool.name.capitalize %></h6>
+
+          <% if tool.available %>
+            <h6 class="card-title text-center fw-semibold p-1"><%= tool.name.capitalize %>
+          <% else %>
+            <h6 class="card-title text-center fw-semibold p-1 text-muted"><%= tool.name.capitalize %>
+            <p class="text-muted small">(Rented)</p>
+          <% end %>
           <div class="d-fex">
             <span class="position-absolute bottom-0 start-0 m-1 ms-2 p-1"><%= number_to_currency(tool.price)%></span>
             <%= link_to "See Details", tool_path(tool), class:"btn-yellow position-absolute bottom-0 end-0" %>

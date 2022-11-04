@@ -12,6 +12,7 @@ class RentalsController < ApplicationController
     @rental.tool = @tool
     authorize @rental
     if @rental.save
+      @tool.update(available: false)
       redirect_to my_rentals_path
     else
       render :new, status: :unprocessable_entity

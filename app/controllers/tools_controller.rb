@@ -30,6 +30,7 @@ class ToolsController < ApplicationController
   def create
     @tool = Tool.new(tool_params)
     @tool.user = current_user
+    @tool.address = current_user.address
     authorize @tool
     if @tool.save
       redirect_to my_tools_path
@@ -66,6 +67,6 @@ class ToolsController < ApplicationController
   end
 
   def tool_params
-    params.require(:tool).permit(:name, :price, :user, :address, photos: [])
+    params.require(:tool).permit(:name, :price, :user, :address, :available, photos: [])
   end
 end
