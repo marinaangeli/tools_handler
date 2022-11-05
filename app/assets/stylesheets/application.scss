@@ -11,3 +11,12 @@
 @import "components/index";
 @import "pages/index";
 @import "@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder";
+
+.center-form-imput {
+  max-width: 195px !important;
+  margin: 0 auto !important;
+}
+
+.btn-reset {
+  color: #ffaa00;
+}
