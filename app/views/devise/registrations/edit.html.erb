@@ -11,6 +11,9 @@
           <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
             <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
           <% end %>
+          <%= f.input :avatar, as: :file,
+                label: "Add a photo to your profile, or change the current one",
+                required: false %>
           <%= f.input :name,
                 required: false,
                 input_html: { autocomplete: "name" } %>
