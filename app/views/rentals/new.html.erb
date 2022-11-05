@@ -1,6 +1,9 @@
 <div class="container">
-  <h1>Rent <%= @tool.name.capitalize %></h1>
+  <h1>Rent <%= @tool.name %></h1>
   <div class="d-flex justify-content-center">
+        <% if Rental.find_by(tool_id: @tool.id).present? %>
+          <h4 class="mt-4" style="color: red">Sorry, this tool is currently rented!</h5>
+          <% else %>
     <div  class="center-form shadow">
       <%= simple_form_for [@tool, @rental] do |f| %>
         <%= f.input :days, label: "Select the number of days to rent:" %>
@@ -19,6 +22,7 @@
       <%= f.input :starts_at, as: :string, required: false, input_html: {class: "datepicker"} %>
       <%= f.input :ends_at, as: :string, required: false, input_html: {class: "datepicker"} %>
       <%= f.button :submit, "Go", class: "btn btn-primary" %>
+    <% end %>
     <% end %>
   </div>
 </div>
