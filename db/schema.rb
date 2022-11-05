@@ -13,7 +13,6 @@
 ActiveRecord::Schema[7.0].define(version: 2022_11_03_235051) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-  enable_extension "unaccent"
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -51,8 +50,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_03_235051) do
     t.bigint "tool_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "start_date"
-    t.string "end_date"
     t.index ["tool_id"], name: "index_rentals_on_tool_id"
     t.index ["user_id"], name: "index_rentals_on_user_id"
   end
