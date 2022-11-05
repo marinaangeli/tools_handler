@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" data-controller="hello">
   <h1 class="mt-3">Rent <%= @tool.name %></h1>
   <div class="d-flex justify-content-center">
     <% if Rental.find_by(tool_id: @tool.id).present? %>
