@@ -6,6 +6,7 @@
 
       <div class="card-product mb-4">
 
+
         <% if rental.tool.photos.attached? %>
             <img src="<%= cl_image_path rental.tool.photos[0].key, height: 300, width: 400, crop: :pad %>">
         <% else %>

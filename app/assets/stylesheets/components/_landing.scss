@@ -4,23 +4,27 @@
 
 .text-1{
   position: relative;
-  left: 30px;
+  left: 35px;
   top: -250px;
   z-index: 100;
 }
 
 .text-2{
   position: relative;
-  left: 35px;
-  top: -325px;
+  left: 55px;
+  top: -400px;
   width: 200px;
 }
 
 
 .text-3{
   position: relative;
-  left: 25px;
+  left: 50px;
   top: -350px;
   width: 200px;
   text-align: center
+}
+
+.landing-main-card{
+  height: fit-content !important;
 }

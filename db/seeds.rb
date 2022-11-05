@@ -7,23 +7,36 @@ puts "Database is clean!"
 
 puts "Generating users"
 
-@adresses = ['Rua Hilário de Gouvêia, Copacabana, Rio de Janeiro, RJ', 'R. Visc. de Pirajá, 580 - Ipanema, Rio de Janeiro, RJ', 'R. Real Grandeza, 219 - Botafogo, Rio de Janeiro, RJ', 'R. Barão de Lucena, 99, Botafogo, Rio de Janeiro, RJ', 'R. Evaristo da Veiga, 264, Centro, Rio de Janeiro, RJ', 'R. Miguel Lemos, 174, Copacabana, Rio de Janeiro, RJ', 'R. Oliveira Fausto, 17, Botafogo, Rio de Janeiro, RJ', 'R. Jardim Botânico, 702-758, Jardim Botânico, Rio de Janeiro, RJ', 'R. José Linhares, Leblon, Rio de Janeiro, RJ', 'Av. Atlântica, 4240, Copacabana, Rio de Janeiro, RJ']
-10.times do
-  User.create(
-    email: Faker::Internet.email,
-    password: Faker::Internet.password,
-    name: Faker::Name.name,
-    address: @adresses.pop,
-    phone: Faker::PhoneNumber.phone_number
+User.create(
+  email: "lucio@lucio",
+  password: "aaaaaa",
+  name: "Lucio Telles",
+  address: 'Rua Hilário de Gouvêia, Copacabana, Rio de Janeiro, RJ',
+  phone: Faker::PhoneNumber.phone_number
   )
-end
 
 User.create(
   email: "teste@teste",
   password: "aaaaaa",
-  name: "Marina",
+  name: "Marina Angeli",
   address: "R. Visc. de Pirajá, 142, rio de janeiro",
   phone: Faker::PhoneNumber.phone_number
+)
+
+User.create(
+  email: "raul@raul",
+  password: "aaaaaa",
+  name: "Raul Chagas",
+  address: 'R. José Linhares, Leblon, Rio de Janeiro, RJ',
+  phone: Faker::PhoneNumber.phone_number
+)
+
+User.create(
+email: "eysler@eysler",
+password: "aaaaaa",
+name: "Eysler Mara",
+address: "R. Oliveira Fausto, 17, Botafogo, Rio de Janeiro, RJ",
+phone: Faker::PhoneNumber.phone_number
 )
 
 @users = User.all
@@ -32,24 +45,154 @@ User.create(
   puts "#{user.email} - #{user.password} - #{user.name} - #{user.address} - #{user.phone}"
 end
 
-@users_id = []
-
-@users.each do |user|
-  @users_id << user.id
-end
 
 
-@tools = ['hammer', 'shovel', 'driller', 'handsaw', 'filer', 'wrench', 'stepladder', 'toolbox', 'plier', 'screwdriver']
-@tool_adresses = ['Rua Hilário de Gouvêia, Copacabana, Rio de Janeiro, RJ', 'R. Visc. de Pirajá, 580 - Ipanema, Rio de Janeiro, RJ', 'R. Real Grandeza, 219 - Botafogo, Rio de Janeiro, RJ', 'R. Barão de Lucena, 99, Botafogo, Rio de Janeiro, RJ', 'R. Evaristo da Veiga, 264, Centro, Rio de Janeiro, RJ', 'R. Miguel Lemos, 174, Copacabana, Rio de Janeiro, RJ', 'R. Oliveira Fausto, 17, Botafogo, Rio de Janeiro, RJ', 'R. Jardim Botânico, 702-758, Jardim Botânico, Rio de Janeiro, RJ', 'R. José Linhares, Leblon, Rio de Janeiro, RJ', 'Av. Atlântica, 4240, Copacabana, Rio de Janeiro, RJ']
-10.times do
-  Tool.create(
-    name: @tools.pop,
-    price: rand(1..200),
-    user_id: @users_id.sample,
-    rating: rand(1..5),
-    address: @tool_adresses.pop
-  )
-end
+@user = @users.sample
+@alicate_universal_8 = Tool.create(
+  name: "Alicate Universal 8",
+  price: rand(1..200),
+  user: @user,
+  rating: rand(1..5),
+  address: @user.address
+)
+
+@alicate_universal_8.photos.attach(io: File.open(Rails.root.join('app/assets/images/Fotos das ferramentas/Alicate universal 8/alicate1.jpg')), filename: "alicate1.jpg")
+@alicate_universal_8.photos.attach(io: File.open(Rails.root.join('app/assets/images/Fotos das ferramentas/Alicate universal 8/alicate2.jpg')), filename: "alicate2.jpg")
+@alicate_universal_8.photos.attach(io: File.open(Rails.root.join('app/assets/images/Fotos das ferramentas/Alicate universal 8/alicate3.jpg')), filename: "alicate3.jpg")
+@alicate_universal_8.photos.attach(io: File.open(Rails.root.join('app/assets/images/Fotos das ferramentas/Alicate universal 8/alicate4.jpg')), filename: "alicate4.jpg")
+
+
+
+@user = @users.sample
+@caixa_sanfonada = Tool.create(
+  name: "Caixa Sanfonada",
+  price: rand(1..200),
+  user: @user,
+  rating: rand(1..5),
+  address: @user.address
+)
+
+@caixa_sanfonada.photos.attach(io: File.open(Rails.root.join('app/assets/images/Fotos das ferramentas/Caixa Sanfonada/00025.jpg')), filename: "caixa_sanfonada1.jpg")
+@caixa_sanfonada.photos.attach(io: File.open(Rails.root.join('app/assets/images/Fotos das ferramentas/Caixa Sanfonada/00026.jpg')), filename: "caixa_sanfonada2.jpg")
+@caixa_sanfonada.photos.attach(io: File.open(Rails.root.join('app/assets/images/Fotos das ferramentas/Caixa Sanfonada/00027.jpg')), filename: "caixa_sanfonada3.jpg")
+@caixa_sanfonada.photos.attach(io: File.open(Rails.root.join('app/assets/images/Fotos das ferramentas/Caixa Sanfonada/00028.jpg')), filename: "caixa_sanfonada4.jpg")
+
+
+
+
+@user = @users.sample
+@chave_de_fenda_cruzada = Tool.create(
+  name: "Chave de fenda cruzada",
+  price: rand(1..200),
+  user: @user,
+  rating: rand(1..5),
+  address: @user.address
+)
+
+@chave_de_fenda_cruzada.photos.attach(io: File.open(Rails.root.join('app/assets/images/Fotos das ferramentas/chave de fenda cruzada/00017.jpg')), filename: "chave_de_fenda_cruzada1.jpg")
+@chave_de_fenda_cruzada.photos.attach(io: File.open(Rails.root.join('app/assets/images/Fotos das ferramentas/chave de fenda cruzada/00018.jpg')), filename: "chave_de_fenda_cruzada2.jpg")
+@chave_de_fenda_cruzada.photos.attach(io: File.open(Rails.root.join('app/assets/images/Fotos das ferramentas/chave de fenda cruzada/00019.jpg')), filename: "chave_de_fenda_cruzada3.jpg")
+@chave_de_fenda_cruzada.photos.attach(io: File.open(Rails.root.join('app/assets/images/Fotos das ferramentas/chave de fenda cruzada/00020.jpg')), filename: "chave_de_fenda_cruzada4.jpg")
+
+
+
+
+@user = @users.sample
+@compressor_de_ar = Tool.create(
+  name: "Compressor de ar",
+  price: rand(1..200),
+  user: @user,
+  rating: rand(1..5),
+  address: @user.address
+)
+
+@compressor_de_ar.photos.attach(io: File.open(Rails.root.join('app/assets/images/Fotos das ferramentas/compressor de ar/00029.jpg')), filename: "compressor_de_ar1.jpg")
+@compressor_de_ar.photos.attach(io: File.open(Rails.root.join('app/assets/images/Fotos das ferramentas/compressor de ar/00030.jpg')), filename: "compressor_de_ar2.jpg")
+@compressor_de_ar.photos.attach(io: File.open(Rails.root.join('app/assets/images/Fotos das ferramentas/compressor de ar/00031.jpg')), filename: "compressor_de_ar3.jpg")
+@compressor_de_ar.photos.attach(io: File.open(Rails.root.join('app/assets/images/Fotos das ferramentas/compressor de ar/00032.jpg')), filename: "compressor_de_ar4.jpg")
+
+
+@user = @users.sample
+@esmerilhadeira = Tool.create(
+  name: "Esmerilhadeira",
+  price: rand(1..200),
+  user: @user,
+  rating: rand(1..5),
+  address: @user.address
+)
+
+@esmerilhadeira.photos.attach(io: File.open(Rails.root.join('app/assets/images/Fotos das ferramentas/Esmerilhadeira/00037.jpg')), filename: "esmerilhadeira1.jpg")
+@esmerilhadeira.photos.attach(io: File.open(Rails.root.join('app/assets/images/Fotos das ferramentas/Esmerilhadeira/00038.jpg')), filename: "esmerilhadeira2.jpg")
+@esmerilhadeira.photos.attach(io: File.open(Rails.root.join('app/assets/images/Fotos das ferramentas/Esmerilhadeira/00039.jpg')), filename: "esmerilhadeira3.jpg")
+@esmerilhadeira.photos.attach(io: File.open(Rails.root.join('app/assets/images/Fotos das ferramentas/Esmerilhadeira/00040.jpg')), filename: "esmerilhadeira4.jpg")
+
+
+
+
+@user = @users.sample
+@grampo_carpinteiro = Tool.create(
+  name: "Grampo carpinteiro",
+  price: rand(1..200),
+  user: @user,
+  rating: rand(1..5),
+  address: @user.address
+)
+
+@grampo_carpinteiro.photos.attach(io: File.open(Rails.root.join('app/assets/images/Fotos das ferramentas/grampo carpinteiro/0005.jpg')), filename: "grampo_carpinteiro1.jpg")
+@grampo_carpinteiro.photos.attach(io: File.open(Rails.root.join('app/assets/images/Fotos das ferramentas/grampo carpinteiro/0006.jpg')), filename: "grampo_carpinteiro2.jpg")
+@grampo_carpinteiro.photos.attach(io: File.open(Rails.root.join('app/assets/images/Fotos das ferramentas/grampo carpinteiro/0007.jpg')), filename: "grampo_carpinteiro3.jpg")
+@grampo_carpinteiro.photos.attach(io: File.open(Rails.root.join('app/assets/images/Fotos das ferramentas/grampo carpinteiro/0008.jpg')), filename: "grampo_carpinteiro4.jpg")
+
+
+
+
+@user = @users.sample
+@inversora_de_solda = Tool.create(
+  name: "inversora de solda",
+  price: rand(1..200),
+  user: @user,
+  rating: rand(1..5),
+  address: @user.address
+)
+
+@inversora_de_solda.photos.attach(io: File.open(Rails.root.join('app/assets/images/Fotos das ferramentas/inversora de solda/00021.jpg')), filename: "inversora_de_solda1.jpg")
+@inversora_de_solda.photos.attach(io: File.open(Rails.root.join('app/assets/images/Fotos das ferramentas/inversora de solda/00022.jpg')), filename: "inversora_de_solda2.jpg")
+@inversora_de_solda.photos.attach(io: File.open(Rails.root.join('app/assets/images/Fotos das ferramentas/inversora de solda/00023.jpg')), filename: "inversora_de_solda3.jpg")
+@inversora_de_solda.photos.attach(io: File.open(Rails.root.join('app/assets/images/Fotos das ferramentas/inversora de solda/00024.jpg')), filename: "inversora_de_solda4.jpg")
+
+
+@user = @users.sample
+@marreta_oitavada = Tool.create(
+  name: "marreta oitavada",
+  price: rand(1..200),
+  user: @user,
+  rating: rand(1..5),
+  address: @user.address
+)
+
+@marreta_oitavada.photos.attach(io: File.open(Rails.root.join('app/assets/images/Fotos das ferramentas/marreta oitavada/0001.jpg')), filename: "marreta_oitavada1.jpg")
+@marreta_oitavada.photos.attach(io: File.open(Rails.root.join('app/assets/images/Fotos das ferramentas/marreta oitavada/0002.jpg')), filename: "marreta_oitavada2.jpg")
+@marreta_oitavada.photos.attach(io: File.open(Rails.root.join('app/assets/images/Fotos das ferramentas/marreta oitavada/0003.jpg')), filename: "marreta_oitavada3.jpg")
+@marreta_oitavada.photos.attach(io: File.open(Rails.root.join('app/assets/images/Fotos das ferramentas/marreta oitavada/0004.jpg')), filename: "marreta_oitavada4.jpg")
+
+
+
+
+@user = @users.sample
+@serrote = Tool.create(
+  name: "serrote",
+  price: rand(1..200),
+  user: @user,
+  rating: rand(1..5),
+  address: @user.address
+)
+
+@serrote.photos.attach(io: File.open(Rails.root.join('app/assets/images/Fotos das ferramentas/serrote/0009.jpg')), filename: "serrote1.jpg")
+@serrote.photos.attach(io: File.open(Rails.root.join('app/assets/images/Fotos das ferramentas/serrote/00010.jpg')), filename: "serrote2.jpg")
+@serrote.photos.attach(io: File.open(Rails.root.join('app/assets/images/Fotos das ferramentas/serrote/00011.jpg')), filename: "serrote3.jpg")
+@serrote.photos.attach(io: File.open(Rails.root.join('app/assets/images/Fotos das ferramentas/serrote/00012.jpg')), filename: "serrote4.jpg")
+
+
 
 @tools = Tool.all
 
