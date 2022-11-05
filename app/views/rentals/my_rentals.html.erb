@@ -14,9 +14,9 @@
 
         <div class="card-product-infos ms-3">
           <h2 class="mb-4"><%= rental.tool.name.capitalize %></h2>
-          <p>You rented it for: <strong><%= rental.days %></strong> days</p>
+          <p>You rented it for: <strong><%= rental.num_days %></strong> days</p>
           <p>Price per day: <strong><%= number_to_currency(rental.tool.price) %></strong></p>
-          <p>Final price: <strong><%= number_to_currency((rental.tool.price * rental.days)) %></strong></p>
+          <p>Final price: <strong><%= number_to_currency(rental.tool.price * rental.num_days) %></strong></p>
         </div>
       </div>
 
