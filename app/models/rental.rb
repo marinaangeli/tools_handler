@@ -11,11 +11,11 @@ class Rental < ApplicationRecord
     self.days = (end_date.to_i - start_date.to_i) / 86_400
   end
 
-  private
-
   def calculate_cost
     self.cost = tool.price * (end_date.to_i - start_date.to_i) / 86_400
   end
+
+  private
 
   def end_date_after_start_date
     return if end_date.blank? || start_date.blank?
