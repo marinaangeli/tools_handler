@@ -1,5 +1,5 @@
 <div class="container">
-  <h1>Rent <%= @tool.name %></h1>
+  <h1 class="mt-3">Rent <%= @tool.name %></h1>
   <div class="d-flex justify-content-center">
         <% if Rental.find_by(tool_id: @tool.id).present? %>
           <h4 class="mt-4" style="color: red">Sorry, this tool is currently rented!</h5>
