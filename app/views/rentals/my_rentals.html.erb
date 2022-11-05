@@ -1,5 +1,5 @@
 <div class="container">
-  <h1 class="my-5">My Rentals</h1>
+  <h1 class="my-3">My Rentals</h1>
 
   <% @rentals.each do |rental| %>
     <% if rental.user == current_user %>
@@ -15,9 +15,9 @@
 
         <div class="card-product-infos ms-3">
           <h2 class="mb-4"><%= rental.tool.name.capitalize %></h2>
-          <p>You rented it for: <strong><%= rental.days %></strong> days</p>
+          <p>You rented it for: <strong><%= rental.num_days %></strong> days (to be returned by <%= rental.end_date.strftime("%B %-d, %Y") %>)</p>
           <p>Price per day: <strong><%= number_to_currency(rental.tool.price) %></strong></p>
-          <p>Final price: <strong><%= number_to_currency((rental.tool.price * rental.days)) %></strong></p>
+          <p>Final price: <strong><%= number_to_currency(rental.tool.price * rental.num_days) %></strong></p>
         </div>
       </div>
 

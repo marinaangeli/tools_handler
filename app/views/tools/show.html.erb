@@ -63,7 +63,7 @@
             %>
           </div>
         <% elsif Rental.find_by(tool_id: @tool.id).present? %>
-          <h6 style="color: red">Currently Rented</h5>
+          <h6 style="color: red">Rented until <%= Rental.find_by(tool_id: @tool.id).end_date.strftime("%B %-d, %Y") %></h5>
         <% else %>
           <%= link_to "Rent now", new_tool_rental_path(@tool), class:"btn-yellow-lg" %>
         <% end %>
