@@ -1,3 +1,7 @@
+import { initFlatpickr } from "../plugins/flatpickr";
+
+initFlatpickr();
+
 import { Application } from "@hotwired/stimulus"
 
 const application = Application.start()
