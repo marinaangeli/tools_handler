@@ -49,7 +49,7 @@ end
 
 @user = @users.sample
 @alicate_universal_8 = Tool.create(
-  name: "Alicate Universal 8",
+  name: "Universal Plier 8",
   price: rand(1..200),
   user: @user,
   rating: rand(1..5),
@@ -65,7 +65,7 @@ end
 
 @user = @users.sample
 @caixa_sanfonada = Tool.create(
-  name: "Caixa Sanfonada",
+  name: "Tool Box",
   price: rand(1..200),
   user: @user,
   rating: rand(1..5),
@@ -82,7 +82,7 @@ end
 
 @user = @users.sample
 @chave_de_fenda_cruzada = Tool.create(
-  name: "Chave de fenda cruzada",
+  name: "Phillips screwdriver",
   price: rand(1..200),
   user: @user,
   rating: rand(1..5),
@@ -99,7 +99,7 @@ end
 
 @user = @users.sample
 @compressor_de_ar = Tool.create(
-  name: "Compressor de ar",
+  name: "air compressor",
   price: rand(1..200),
   user: @user,
   rating: rand(1..5),
@@ -114,7 +114,7 @@ end
 
 @user = @users.sample
 @esmerilhadeira = Tool.create(
-  name: "Esmerilhadeira",
+  name: "Grinder",
   price: rand(1..200),
   user: @user,
   rating: rand(1..5),
@@ -131,7 +131,7 @@ end
 
 @user = @users.sample
 @grampo_carpinteiro = Tool.create(
-  name: "Grampo carpinteiro",
+  name: "Clamp",
   price: rand(1..200),
   user: @user,
   rating: rand(1..5),
@@ -148,7 +148,7 @@ end
 
 @user = @users.sample
 @inversora_de_solda = Tool.create(
-  name: "inversora de solda",
+  name: "inverter welder",
   price: rand(1..200),
   user: @user,
   rating: rand(1..5),
@@ -163,7 +163,7 @@ end
 
 @user = @users.sample
 @marreta_oitavada = Tool.create(
-  name: "marreta oitavada",
+  name: "soft faced hammer",
   price: rand(1..200),
   user: @user,
   rating: rand(1..5),
@@ -180,7 +180,7 @@ end
 
 @user = @users.sample
 @serrote = Tool.create(
-  name: "serrote",
+  name: "hacksaw",
   price: rand(1..200),
   user: @user,
   rating: rand(1..5),
