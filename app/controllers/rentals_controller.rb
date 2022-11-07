@@ -31,7 +31,7 @@ class RentalsController < ApplicationController
   private
 
   def rental_params
-    params.require(:rental).permit(:days, :delivery)
+    params.require(:rental).permit(:days, :delivery, :start_date, :end_date)
   end
 
   def set_rented_tool

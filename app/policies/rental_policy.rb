@@ -22,6 +22,10 @@ class RentalPolicy < ApplicationPolicy
     true
   end
 
+  def number_days?
+    true
+  end
+
   def update?
     record.user == user
     # record: the restaurant passed to the `authorize` method in controller

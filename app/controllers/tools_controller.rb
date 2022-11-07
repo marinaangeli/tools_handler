@@ -49,10 +49,18 @@ class ToolsController < ApplicationController
 
   def update
     authorize @tool
-    if @tool.update(tool_params)
-      redirect_to tool_path(@tool)
+    if tool_params[:photos].length > 1
+      if @tool.update(tool_params)
+        redirect_to tool_path(@tool)
+      else
+        render :edit
+      end
     else
-      render :edit
+      if @tool.update(tool_params.except(:photos))
+        redirect_to tool_path(@tool)
+      else
+        render :edit
+      end
     end
   end
 
