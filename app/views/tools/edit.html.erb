@@ -4,7 +4,7 @@
       <%= simple_form_for @tool do |f| %>
         <%= f.input :name, label: "Edit the tool's name:" %>
         <%= f.input :price %>
-        <%= f.input :photos, as: :file , input_html: { multiple: true }, class:"mb-2",
+        <%= f.input :photos, as: :file , input_html: { multiple: true }, required: false, class:"mb-2",
           hint: "You can leave this blank if you're not updating the photo" %>
         <%= f.input :available %>
         <%= f.submit "Update", :class => "btn-yellow-lg" %>
