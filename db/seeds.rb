@@ -82,7 +82,7 @@ end
 
 @user = @users.sample
 @chave_de_fenda_cruzada = Tool.create(
-  name: "Chave de fenda cruzada",
+  name: "Chave de fenda cruzada ",
   price: rand(1..200),
   user: @user,
   rating: rand(1..5),
